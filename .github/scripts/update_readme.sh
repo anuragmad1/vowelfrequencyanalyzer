@@ -12,7 +12,7 @@ TIMESTAMP=$(date)
 printf '\n%s - %s - %s\n' "$GITHUB_USER" "$FREQ_RESULT" "$TIMESTAMP" >> README.md
 
 # Configure Git to use GitHub Actions user and email
-git config --global --add safe.directory /app
+git config --global --add safe.directory /github/workspace
 git config --global user.name "github-actions[bot]"
 git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
