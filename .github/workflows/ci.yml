@@ -6,6 +6,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,4 +25,6 @@ jobs:
         run: |
           docker run --rm \
             -e GITHUB_USER="${{ github.actor }}" \
+            -v "$GITHUB_WORKSPACE:/app" \
+            -w /app \
             vowel-frequency-analyzer:latest
